@@ -1,13 +1,19 @@
 {
-  "capabilities": [],
+  "capabilities": [
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#device-configuration-model",
+      "identifier": "device_configuration_model"
+    }
+  ],
   "claims": [],
-  "evidence_maturity": "architecture_only",
-  "implemented_capability_count": 0,
+  "evidence_maturity": "computational_prototype",
+  "implemented_capability_count": 1,
   "project": "SCPN-LEVITATED-DIPOLE-CORE",
   "schema": "scpn.capability-inventory.v1",
   "schema_version": "1.0.0",
   "source": {
     "manifest_path": "reactor-domain.json",
-    "manifest_sha256": "66f8d1bc1c22e39ec2b666c62f66d196b8784e86f49e98dee428f8f82101e81d"
+    "manifest_sha256": "0154bf47d00b860935a4c1351e2a041df92ea3bc9051896894f928859cf2e43d"
   }
 }
