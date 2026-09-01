@@ -8,6 +8,11 @@ Contact: www.anulum.li | protoscience@anulum.li
 SCPN Levitated Dipole Core — README
 -->
 
+<div align="center">
+  <img src="docs/assets/repo_header.png"
+       alt="SCPN Levitated Dipole Core — A Ring Afloat In Its Own Field">
+</div>
+
 # SCPN Levitated Dipole Core
 
 Governed device-family repository for levitated-dipole fusion systems
