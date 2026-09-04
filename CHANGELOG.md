@@ -14,6 +14,49 @@ SCPN Levitated Dipole Core — CHANGELOG
 
 ### Added
 
+- The coil set in two states, tessellated and exact (`device_3d_model`,
+  `device_cad_model`, ADR 0006). The rollout plan assigned this family a
+  **torus primitive**; reading the filed source settled it differently.
+  Printed page 2374 describes the floating coil's winding pack as "three
+  rectangular sub-coils with aligned vertical centers", and every body of
+  this device turns out to be an **annular tube** — a primitive the shared
+  library has carried since its own ADR 0002. Nothing printed is a torus,
+  and the source's own schematic draws the floating coil as a rectangle in
+  section.
+
+  **Two states, two frames, no transformation between them.** The source
+  prints the levitation coil's 1.610 m separation from the floating coil
+  and prints nothing about the charging coil's, so one frame holding all
+  three coils would assert a distance no source gives.
+
+  **The vacuum vessel is not modelled.** One printed number, its 5 m
+  diameter, does not fix a shape, and the source draws a faceted body of
+  revolution whose profile appears nowhere.
+
+  Four dimensions are declared rather than printed and each carries its
+  reading: two sub-coil outer diameters that make the pack continuous, a
+  cryostat height that is the circular-cross-section reading of two
+  printed diameters, a levitation coil height summed from printed plate
+  and tape thicknesses, and a charging offset of zero.
+
+  **Three printed diameters nest** — cryostat 1.140 m, charging station
+  1.157 m, charging bore 1.300 m — from three different places in the
+  source, and a floating coil too large for the bore is refused. **One
+  printed relation nearly closes** and is carried as a number: 2800 turns
+  of 0.168 mm tape span 470.4 mm against a printed 455.0 mm, ratio 1.0338.
+
+  Measured on this body set: the B-rep agrees with the analytic forms
+  within `1e-14`; the faceting sits between 4.72 % and 11.95 % of its
+  bound across the ten body placements; and **the tier-G1 mesh deficit
+  equals the inscribed-polygon bound** to twelve significant figures,
+  because an annular tube is bounded by two circles of one segment count.
+  The tier-G2 mesh check is therefore tight rather than generous, and its
+  whole margin is the faceting.
+
+  This repository becomes a consumer of the shared kernel library, pinned
+  by public git URL at commit `4095aa8`, which widens the open registry
+  finding already reported to the reviewing authority.
+
 - Level-0 device physics (`level0_device_physics`,
   `computational_prototype`, ADR 0005): four declarations of what the
   configuration does not carry — the winding, the inductive charging

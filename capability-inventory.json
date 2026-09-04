@@ -2,6 +2,16 @@
   "capabilities": [
     {
       "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#device-3d-model",
+      "identifier": "device_3d_model"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#device-cad-model",
+      "identifier": "device_cad_model"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
       "evidence_pointer": "VALIDATION.md#device-configuration-model",
       "identifier": "device_configuration_model"
     },
@@ -18,12 +28,12 @@
   ],
   "claims": [],
   "evidence_maturity": "computational_prototype",
-  "implemented_capability_count": 3,
+  "implemented_capability_count": 5,
   "project": "SCPN-LEVITATED-DIPOLE-CORE",
   "schema": "scpn.capability-inventory.v1",
   "schema_version": "1.0.0",
   "source": {
     "manifest_path": "reactor-domain.json",
-    "manifest_sha256": "95aab4ea6dbd86ea711b7adf28e223dfa23de857da1d52e7b02acf6e02e20e41"
+    "manifest_sha256": "841d50e1502bb8c8a80811e72b36cc995e4f37bc6571d4ea405d0430aaba06f8"
   }
 }

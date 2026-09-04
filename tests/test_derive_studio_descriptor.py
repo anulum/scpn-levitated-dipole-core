@@ -32,6 +32,16 @@ def test_descriptor_projects_identity_without_authority() -> None:
     ]
     assert descriptor["capabilities"] == [
         {
+            "identifier": "device_3d_model",
+            "evidence_maturity": "computational_prototype",
+            "evidence_pointer": "VALIDATION.md#device-3d-model",
+        },
+        {
+            "identifier": "device_cad_model",
+            "evidence_maturity": "computational_prototype",
+            "evidence_pointer": "VALIDATION.md#device-cad-model",
+        },
+        {
             "identifier": "device_configuration_model",
             "evidence_maturity": "computational_prototype",
             "evidence_pointer": "VALIDATION.md#device-configuration-model",

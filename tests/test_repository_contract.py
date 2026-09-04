@@ -135,6 +135,16 @@ def test_manifest_declares_exact_configuration_assignment() -> None:
     assert manifest["evidence_maturity"] == "computational_prototype"
     assert manifest["capabilities"] == [
         {
+            "identifier": "device_3d_model",
+            "evidence_maturity": "computational_prototype",
+            "evidence_pointer": "VALIDATION.md#device-3d-model",
+        },
+        {
+            "identifier": "device_cad_model",
+            "evidence_maturity": "computational_prototype",
+            "evidence_pointer": "VALIDATION.md#device-cad-model",
+        },
+        {
             "identifier": "device_configuration_model",
             "evidence_maturity": "computational_prototype",
             "evidence_pointer": "VALIDATION.md#device-configuration-model",
@@ -163,7 +173,7 @@ def test_descriptor_and_inventory_embed_current_manifest_digest() -> None:
     assert descriptor["source"]["manifest_sha256"] == digest
     assert inventory["source"]["manifest_sha256"] == digest
     assert descriptor["lifecycle"]["state"] == "not_federated"
-    assert inventory["implemented_capability_count"] == 3
+    assert inventory["implemented_capability_count"] == 5
 
 
 def test_no_agent_state_trees_exist() -> None:

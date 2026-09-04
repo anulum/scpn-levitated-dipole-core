@@ -25,3 +25,12 @@ class DiagnosticPlanError(ValueError):
     Every rejection carries the offending field and the violated bound in
     its message; nothing is clamped or silently corrected.
     """
+
+
+class DeviceGeometryError(ValueError):
+    """Rejection of an inadmissible 3D or CAD model input.
+
+    Raised when a declared dimension leaves its documented interval, when
+    a body set does not nest as the source's printed diameters require,
+    or when a state is asked for a body it does not place.
+    """

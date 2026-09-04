@@ -307,3 +307,96 @@ does not have.
   would have refused the condition this family exists to model.
 - No value describes or validates any real machine or shot; an anchor
   reproduces a number a filed source prints and nothing further.
+
+## Device 3D model
+
+Evidence record of the `device_3d_model` capability
+(`computational_prototype`; design record
+`docs/adr/0006-device-3d-and-cad-models.md`; contract
+`docs/DEVICE_3D_MODEL_CONTRACT.md`; kernels `geometry_unit_circle`,
+`geometry_mesh_contract`, `geometry_primitives` and
+`numerics_transcendental` of `scpn-reactor-kernels` at commit
+`4095aa8304974fd44d02c718d36eafc69b254944`).
+
+The coil set is five annular tubes per state, built entirely from the
+shared library; no geometry is implemented in this repository.
+
+What is exercised, all under the 100 % statement-and-branch coverage
+gate:
+
+- **The three printed diameters nest.** The cryostat's outer limiter
+  diameter (1.140 m), the charging station's (1.157 m) and the charging
+  coil's bore (1.300 m) are printed in three different places and must be
+  consistent for the machine to be assemblable. The test asserts the
+  nesting and the 17 mm and 80 mm clearances it implies, and a separate
+  test asserts that a floating coil too large for the bore is **refused**,
+  so the nesting is a gate rather than a remark.
+- **The four declared dimensions each carry their reading.** The two
+  sub-coil outer diameters make the pack continuous, and the gaps they
+  produce are asserted to be exactly zero while remaining **reported and
+  never gated**; the cryostat height is asserted equal to half the
+  difference of its two printed diameters, the circular-cross-section
+  reading of the word "toroidal"; the levitation coil height is asserted
+  equal to the sum of the printed plate, sheet and tape thicknesses.
+- **One printed relation that nearly closes** is carried as a number:
+  2800 turns of 0.168 mm tape span 470.4 mm against a printed radial span
+  of 455.0 mm, a ratio of **1.0338**, which the source's "double pancake"
+  wording does not predict. Reported, resolved nowhere.
+- **The two states place five bodies each**, share the four floating-coil
+  bodies vertex for vertex, differ in the fifth, and digest differently.
+  The levitation coil is asserted at the **printed** 1.610 m and the
+  charging coil at the **declared** zero offset. The three sub-coils are
+  asserted to share one vertical centre, which the source prints.
+- **The mesh deficit is the inscribed-polygon deficit exactly**, scanned
+  at 8, 16, 32, 64, 128 and 256 segments and agreeing with
+  `1 - (n / 2 pi) sin(2 pi / n)` to eleven relative digits. An annular
+  tube is bounded by two circles of the same segment count, so both radii
+  shrink by the same ratio and the volume scales by exactly that ratio:
+  the bound is **attained**, not approached.
+- **Refusals**: an unknown state at both the builder and the record; a
+  body set that does not match the state it claims; every inadmissible
+  dimension including equal and inverted diameters; sub-coils out of
+  radial order; a non-positive or non-finite levitation separation; a
+  non-finite charging offset.
+- **The record** is canonical, digests stably, names the unit of every
+  numeric field, and its non-claims name the torus it does not build, the
+  vacuum vessel it does not model and the transformation it does not
+  define.
+
+## Device CAD model
+
+Evidence record of the `device_cad_model` capability
+(`computational_prototype`; same design record; kernels
+`cad_brep_solids`, `cad_faceting`, `cad_evidence` and `cad_step_export`
+at the same commit). The tier-G2 back-end is an optional `cad` extra and
+the tests skip hermetically without it.
+
+Measured on this body set, over the ten body placements of the two
+states, and **not** reused from a sibling family:
+
+| Quantity | Measured |
+|---|---|
+| B-rep volume and area against the analytic forms | within `1e-14` relative |
+| faceting deficit as a fraction of its `2 d / r` bound | `0.0472` to `0.1195` |
+| tier-G1 mesh deficit against the polygon bound | equal, to twelve significant figures |
+
+- **The faceting fraction is a range and not a number.** The bound falls
+  as a body's inner radius grows while the mesher's deviation does not,
+  so the widest-bore body sits at more than twice the fraction of the
+  narrowest. The test asserts the whole range and asserts that the ratio
+  between the extremes exceeds two, so a future change that flattened the
+  spread would be noticed.
+- **The mesh-difference check is tight.** Because the tier-G1 deficit
+  equals the polygon bound rather than sitting under it, the margin of
+  that check is exactly the faceting deficit. A test asserts that the
+  margin equals the faceting deficit to five per cent, which is the
+  statement that the check has no hidden slack.
+- **Every body declares a real curvature radius.** No body of this device
+  is a prism, so no smallest radius is `None` and the library's bound is
+  a real bound for all five. A sibling family had to pass `None` for its
+  prisms precisely because a curvature bound computed from a number that
+  is not a curvature would pass whatever the mesher did.
+- **The STEP export is deterministic**: the same model exports the same
+  bytes, so its digest is a digest.
+- **Refusals**: an unknown state at the assembly builder, the radius
+  helper and the model builder alike.
