@@ -22,16 +22,21 @@ configuration of the SCPN Phase Orchestrator reactor registry (closed
 dipole field).
 
 **Evidence maturity: `computational_prototype`** (per-capability; ADR 0002).
-Two capabilities are implemented: the device configuration model —
+Three capabilities are implemented: the device configuration model —
 validated parameter objects with documented consistency estimates,
 canonical serialisation, and a data-only SPO registry pin
 (evidence: `VALIDATION.md#device-configuration-model`) — and the
 diagnostic and clock semantics model — synthetic channel and clock
 declarations aligned fail-closed with the pinned SPO observability
 catalogue (ADR 0003, evidence:
-`VALIDATION.md#diagnostic-and-clock-semantics`). No parameter set or
-channel describes any real machine or diagnostic; the claim inventory
-is empty and verified by the domain validator.
+`VALIDATION.md#diagnostic-and-clock-semantics`) — and level-0 device
+physics: what the levitated ring is as a magnet, what holds it up, how
+current reaches a coil with no leads, and what the field confines,
+evaluated in closed form on the values a filed design paper prints
+(ADR 0005, evidence: `VALIDATION.md#level-0-device-physics`). No
+parameter set, channel or relation describes any real machine or
+diagnostic; the claim inventory is empty and verified by the domain
+validator.
 
 ## Scope
 

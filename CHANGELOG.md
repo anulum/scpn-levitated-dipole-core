@@ -14,6 +14,26 @@ SCPN Levitated Dipole Core — CHANGELOG
 
 ### Added
 
+- Level-0 device physics (`level0_device_physics`,
+  `computational_prototype`, ADR 0005): four declarations of what the
+  configuration does not carry — the winding, the inductive charging
+  circuit, the electron cyclotron heating and the plasma — and four
+  relation modules evaluated on them. Anchored on the freely published
+  design paper the repository cites, read off pages rendered at 180 dpi.
+  Two printed numbers are recovered from relations they were not fitted
+  to: the field a printed heating frequency resonates at, and the
+  floating-coil charge a printed pair of inductances and a printed
+  charging current produce. One printed figure is recorded as not
+  reproduced rather than absorbed, checked at the most favourable
+  printed combination and not only at the nominal one. Two printed
+  statements that disagree with each other are reported and gated
+  nowhere: the source's levitation relation names a symbol that makes it
+  differ from the standard loop force balance by exactly a factor of
+  two, and the current its printed inductances induce is not the
+  operational current it prints elsewhere. The configuration's own
+  single-turn levitation estimate is superseded by the winding's, and
+  both are reported.
+
 - Diagnostic-plan depth: per-channel signal inventories, frame
   transformations with a fixed kind-admissibility table and connectivity
   rule, and a clock topology partitioning the physical clocks into rooted

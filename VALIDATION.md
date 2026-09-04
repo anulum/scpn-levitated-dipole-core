@@ -207,3 +207,103 @@ gate:
   domain (`clk_facility` root, `clk_shot` member); multi-domain rules
   are exercised by test-constructed plans. Scopes are declarations;
   `mapping_state` stays `unmapped`.
+
+## Level-0 device physics
+
+`src/scpn_levitated_dipole_core/physics/`. Closed-form evaluation of the
+relations the filed source prints, on four declarations of what the
+configuration does not carry. Design record: ADR 0005.
+
+Source: D. T. Garnier et al., *Fusion Engineering and Design* **81**
+(2006) 2371, SHA-256 `4e3015fd…`, verified against the repository's
+papers ledger before reading. **Every value was read off pages rendered
+at 180 dpi**, never off the PDF text layer.
+
+### What is anchored
+
+Two printed numbers come back out of relations they were not fitted to.
+
+| Quantity | Relation gives | Printed | Status |
+|---|---|---|---|
+| resonant field at 6.4 GHz | 0.228633 T | 0.23 T | **anchor**, exact at 2 s.f. |
+| F-coil charge at 300 A C-coil | 933.19 kA-turns | 930 kA T | **anchor**, exact at 2 s.f. |
+| ampere-turns at the operational current | 1.303 MA-turns | "> 1.2 MA" | consistent with the printed floor |
+
+The second is the stronger of the two: two inductances and a charging
+current, printed on two different pages, go through flux conservation
+and the printed turn count, and a fourth printed number comes out.
+
+**This source rounds rather than floors**, unlike a sibling family's
+source in this group, and a test asserts the difference so the
+convention is not carried across again.
+
+### What does not reproduce
+
+| Printed | Source's own numbers give | Status |
+|---|---|---|
+| "over 1.5 MA turns" | 1.303 MA-turns at the operational current; 1.322 MA-turns at the maximum charge | **not reproduced** |
+
+Checked at the maximum charge and not only at the operational current,
+because a claim that a figure is unreachable has to be tested where the
+numbers are largest. It anchors nothing and no input was adjusted until
+it appeared.
+
+### What disagrees with itself, and is reported rather than resolved
+
+**The levitation relation differs from the standard force balance by
+exactly two.** The source prints `B_r = M_d g / (2 pi a I_d)` and states
+that `a` is the average **diameter**. The loop force balance uses the
+circumference `2 pi R`, so the printed form read literally returns half
+what the balance requires. Both are computed — 0.986 mT and 1.973 mT —
+the ratio is a field of the record, and neither is adjusted. The source
+prints no value of that field, so nothing anchors either; both are
+ordinary millitesla numbers, so neither is absurd.
+
+**Two printed statements about one current differ by 1.4 %.** The
+printed inductances at the printed maximum charging current induce
+1846.4 A; the source prints the operational current as 1820 A. The ratio
+is reported and **gated nowhere**, because the source does not reconcile
+them and a threshold would be a criterion no source states.
+
+### What is declared, and said to be declared
+
+- **The axial field gradient at the floating coil** is printed nowhere.
+  The source gives a levitation-coil separation, an operating field
+  inside that coil's own winding, and the required-field relation. The
+  anchor fixture **derives** the gradient that balances the printed
+  weight exactly, so the configuration sits at a levitation margin of
+  one rather than at a comfortable number chosen to pass.
+- **The field at the pressure peak** is derived by inverting the
+  source's own beta definition on its own printed numbers. It is not an
+  anchor and the non-claims say so.
+- **The flux-tube volume expansion** is a consistency instrument: the
+  source prints the adiabatic index and a pressure ratio it says is
+  reachable, and prints no flux-tube volume anywhere.
+
+### What is superseded
+
+The configuration's own `levitation_force_n()` evaluates `F = m dB/dz`
+on a **single turn**, because the configuration carries no turn count;
+the source's coil has 716. The record reports both forces and takes its
+margin from the winding. A test asserts the two differ by exactly the
+declared turn count. The configuration is not wrong — it documents
+itself as a rough instrument and cannot do better without a field it
+does not have.
+
+### Non-claims, each asserted by a test
+
+- Nothing is integrated in time; no equilibrium is solved, no transport
+  equation evaluated, no stability spectrum computed.
+- The cyclotron resonance is non-relativistic, while the source's own
+  hot electrons reach tens of kiloelectronvolts, where the relativistic
+  mass shift moves the resonance.
+- The plasma quantities describe **one published discharge of one
+  experiment** and are not a design point, an average or a projection.
+  The source's own two displaced-peak betas, 23 % and 18 %, bracket the
+  quoted 21 % and are carried so the quoted value is visibly one of
+  three.
+- A beta above one is admitted rather than refused: the source defines
+  its regime as `beta > 1`, and a validator with an upper bound of one
+  would have refused the condition this family exists to model.
+- No value describes or validates any real machine or shot; an anchor
+  reproduces a number a filed source prints and nothing further.
