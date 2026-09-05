@@ -42,7 +42,7 @@ from scpn_levitated_dipole_core.plan_envelope import (
 )
 
 FIXTURE = Path(__file__).parent / "data" / "plan_envelope_fixture.json"
-FIXTURE_SHA256 = "dfccfda19883070a034b3e7d2df97198dfc2a010926c91bd87e6aece450449c5"
+FIXTURE_SHA256 = "3b397398b6b8fb571d27d649f7d63bf14ba2e629c1d7c76143e4367c7e2fb3f8"
 
 
 def fixture_document() -> dict[str, Any]:

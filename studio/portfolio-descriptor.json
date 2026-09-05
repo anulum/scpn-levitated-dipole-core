@@ -43,7 +43,7 @@
   "device_family": "levitated_dipole",
   "evidence_maturity": "computational_prototype",
   "lifecycle": {
-    "evidence_pointer": null,
+    "evidence_pointer": "VALIDATION.md",
     "reason": "federation gates have not run; capabilities remain repository-local",
     "state": "not_federated"
   },
@@ -71,7 +71,7 @@
     "manifest_path": "reactor-domain.json",
     "manifest_schema": "scpn.reactor-domain.v1",
     "manifest_schema_version": "1.0.0",
-    "manifest_sha256": "f1b1d6b195eb3d56676385add7243c3822746c0c440f6061b3748beae40678b3",
+    "manifest_sha256": "dc8ade21be1863950e5c390cdaa079f002b83ac894c1c89588d2d279115a0d31",
     "repository": "SCPN-LEVITATED-DIPOLE-CORE"
   },
   "spo_registry": {
