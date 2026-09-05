@@ -42,7 +42,7 @@ from scpn_levitated_dipole_core.plan_envelope import (
 )
 
 FIXTURE = Path(__file__).parent / "data" / "plan_envelope_fixture.json"
-FIXTURE_SHA256 = "3b397398b6b8fb571d27d649f7d63bf14ba2e629c1d7c76143e4367c7e2fb3f8"
+FIXTURE_SHA256 = "552bd878496d7c73fbcd56cb48abddbf1454e8d1eefe4765bc6173c339a81c53"
 
 
 def fixture_document() -> dict[str, Any]:
@@ -266,7 +266,19 @@ def test_constants_are_the_published_contract() -> None:
 def test_manifest_digest_matches_committed_manifest() -> None:
     """The envelope pins the committed canonical manifest bytes."""
     manifest = Path(__file__).parents[1] / "reactor-domain.json"
-    digest = hashlib.sha256(manifest.read_bytes()).hexdigest()
+    data = manifest.read_bytes()
+    canonical = (
+        json.dumps(
+            json.loads(data),
+            ensure_ascii=False,
+            allow_nan=False,
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n"
+    )
+    assert data == canonical.encode("utf-8"), "SPO requires canonical source bytes"
+    digest = hashlib.sha256(data).hexdigest()
     assert fixture_envelope().manifest_sha256 == digest
 
 

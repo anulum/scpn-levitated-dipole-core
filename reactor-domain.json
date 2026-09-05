@@ -140,8 +140,8 @@
   },
   "studio_integration": {
     "descriptor": "studio/portfolio-descriptor.json",
+    "evidence_pointer": "VALIDATION.md",
     "reason": "federation gates have not run; capabilities remain repository-local",
-    "state": "not_federated",
-    "evidence_pointer": "VALIDATION.md"
+    "state": "not_federated"
   }
 }
