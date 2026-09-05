@@ -61,12 +61,14 @@ From the monorepo root:
 
 ```bash
 python3 agentic-shared/scripts/repository_tier0_scaffold_audit.py \
-  03_CODE/SCPN-LEVITATED-DIPOLE-CORE --json
+  03_CODE/SCPN-REACTOR-SYSTEMS/repositories/SCPN-LEVITATED-DIPOLE-CORE --json
 ```
 
-proves the Tier-0 local-scaffold machine profile (required and forbidden
-paths, Git/remote boundary, workflow pins and permissions, badge non-claims,
-JSON integrity, defensive ignore rules).
+checks the pre-publication local-scaffold profile. This published repository
+has an authorised origin remote, so the bootstrap profile's zero-remote
+requirement is not an applicable acceptance gate. Retain its diagnostic
+output and verify the repository gates above; never remove the remote
+or rewrite external source records to satisfy the bootstrap profile.
 
 ## Device configuration model
 
@@ -316,7 +318,7 @@ Evidence record of the `device_3d_model` capability
 `docs/DEVICE_3D_MODEL_CONTRACT.md`; kernels `geometry_unit_circle`,
 `geometry_mesh_contract`, `geometry_primitives` and
 `numerics_transcendental` of `scpn-reactor-kernels` at commit
-`4095aa8304974fd44d02c718d36eafc69b254944`).
+`c83745c6011d9b0ea6c413cf0b7d607c724090e7`).
 
 The coil set is five annular tubes per state, built entirely from the
 shared library; no geometry is implemented in this repository.

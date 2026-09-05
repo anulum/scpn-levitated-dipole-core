@@ -71,7 +71,7 @@
     "manifest_path": "reactor-domain.json",
     "manifest_schema": "scpn.reactor-domain.v1",
     "manifest_schema_version": "1.0.0",
-    "manifest_sha256": "841d50e1502bb8c8a80811e72b36cc995e4f37bc6571d4ea405d0430aaba06f8",
+    "manifest_sha256": "f1b1d6b195eb3d56676385add7243c3822746c0c440f6061b3748beae40678b3",
     "repository": "SCPN-LEVITATED-DIPOLE-CORE"
   },
   "spo_registry": {

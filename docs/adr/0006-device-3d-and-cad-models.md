@@ -91,9 +91,9 @@ outer limiter diameter and no height at all.
    predict two radial stacks rather than one. The record reports the
    ratio and resolves nothing.
 7. The kernel library is pinned by **public git URL at commit
-   `4095aa8304974fd44d02c718d36eafc69b254944`**, declared in the manifest
+   `c83745c6011d9b0ea6c413cf0b7d607c724090e7`**, declared in the manifest
    with the inventory digest
-   `704bcca75675615fa87ff1c1debdf594f3dcdb9df17b19de48ef28046f95a303` and
+   `46dc34f9a3c7f498c454bd3219c0233848a71405371ee947d4ab79cf2f5d63f8` and
    the eight kernels this family reaches. The tier-G2 back-end is an
    optional `cad` extra naming the same commit, because it pulls about a
    gigabyte and every other capability works without it.
