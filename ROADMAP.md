@@ -5,60 +5,14 @@ Commercial license available
 © Code 2020–2026 Miroslav Šotek. All rights reserved.
 ORCID: 0009-0009-3560-0851
 Contact: www.anulum.li | protoscience@anulum.li
-SCPN Levitated Dipole Core — ROADMAP
+SCPN LEVITATED DIPOLE CORE — research milestones
 -->
 
 # Roadmap
 
-Planned work and implemented capability are kept strictly separate. Anything
-listed under "Planned" carries no implementation, no code, and no claim in
-this repository until it appears in the capability inventory with evidence.
+Planned milestones; completion depends on published evidence and validation.
 
-## Implemented (repository infrastructure, not reactor capability)
-
-- Domain manifest (`reactor-domain.json`) with validator.
-- Derived Studio portfolio descriptor (`not_federated`) with drift check.
-- Generated capability inventory (truthfully empty) with drift check.
-- CONTROL adapter specification (contract only, no implementation).
-- Local and workflow gate definitions (lint, typing, tests, coverage,
-  REUSE, security audit, SBOM, documentation checks).
-
-- **Device configuration model** (landed 2026-08-31) — validated
-  floating-coil and levitation objects for `levitated_dipole` with the
-  hard superconducting-coil invariant, the dipole-moment/force-balance
-  levitation advisory (LDX-class; Garnier et al. 2006), canonical
-  digests, and the SPO registry data pin; `computational_prototype`
-  (ADR 0002, `VALIDATION.md#device-configuration-model`). Heating
-  inventory remains future work under the same capability.
-- **Diagnostic and clock semantics** (landed 2026-08-31) — synthetic
-  diagnostic-channel and clock declarations aligned fail-closed with the
-  pinned SPO observability-profile catalogue (release `1.0.0`): candidate
-  applicability, carrier admissibility, exact evidence vocabularies,
-  clock-kind compatibility, Nyquist bounds, canonical digests; the
-  reference plan mirrors canonical practice (flux loops, interferometer, drive reference, interchange probe array, synthetic oscillator);
-  `computational_prototype` (ADR 0003,
-  `VALIDATION.md#diagnostic-and-clock-semantics`). No ingress is
-  declared; the SPO semantic-profile state remains `not_declared`.
-
-## Planned (no implementation exists; ordering is not a commitment)
-1. **Safety-envelope declaration** — machine-readable operational envelope
-   (coil, levitation, and density bounds) consumed by the CONTROL adapter
-   contract.
-2. **CONTROL adapter implementation** — device-owned adapter against the
-   published specification, with replay fixtures and HIL evidence,
-   targeting `control_research_ready` only after replay and HIL
-   acceptance.
-3. **Solver seam consumption** — versioned consumption of exact
-   `SCPN-FUSION-CORE` seams for interchange-marginality and pinch
-   transport surfaces, strictly after the family migration gate proves
-   exact replacement; no solver code is copied.
-4. **Facility-data correlation** — preregistered acceptance contracts
-   against identified facility or published experimental data, targeting
-   `experiment_correlated` per capability.
-
-## Not planned in this repository
-
-Magnetic mirrors, magnetic-cusp devices, toroidal external-coil systems,
-pinches, inertial and magneto-inertial systems, electrostatic devices,
-generic controller mathematics, machine-protection logic (including the
-levitation-safety chain), and any direct actuation path.
+1. Establish reference cases and source support for levitated dipole field and plasma studies.
+2. Validated levitation, plasma and assembly comparisons.
+3. Independently assess prediction accuracy and uncertainty against held-out reference cases.
+4. Provide reproducible design studies, understandable results and documented integration.
