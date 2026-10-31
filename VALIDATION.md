@@ -126,8 +126,16 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
   release is rejected.
 - A reference plan mirroring canonical practice with synthetic
   declarations: flux loops, interferometer, drive reference, interchange probe array, synthetic oscillator, each bound to its clock domain.
-- Documented advisory band checks with their sources stated in the
-  code: dipole interchange/entropy-mode activity in the Hz-to-kHz scale and ICRF-to-ECRH drive frequencies (Garnier et al. 2006); findings are reported, never clamped.
+- Advisory checks against declared synthetic design bounds: an
+  interchange/entropy-mode band of 1 Hz–10 kHz, a drive band of 1 MHz–200
+  GHz and a ~10 s shot-duration bound. They were earlier credited to Garnier
+  et al. (2006) and Post (1987); the filed LDX design paper (Garnier et al.,
+  Fusion Eng. Des. 81 (2006) 2371) prints related numbers but not these
+  bounds: ECRH at 2.45 and 6.4 GHz, shots typically under 0.3 s with
+  steady-state operation above 10 s as a goal, and mechanical modes of the
+  levitated coil below 10 Hz, and Post (1987) is not on file, so the
+  attribution was removed (2026-10-31). Findings are reported, never
+  clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.

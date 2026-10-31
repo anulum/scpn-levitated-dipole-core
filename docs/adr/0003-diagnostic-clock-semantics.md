@@ -49,7 +49,15 @@ bind. Four candidates apply to the configuration this repository owns: `open.dri
    clock).
 4. Timing is fail-closed where physics fixes the bound: the Nyquist
    criterion for both cyclic classes. The device-typical band checks
-   are advisory only: the dipole interchange and entropy-mode scale of hertz to kilohertz (D. T. Garnier et al., Phys. Plasmas 13 (2006) 056111) and the ICRF-to-ECRH drive range 1 MHz–200 GHz.
+   are advisory only and compare against declared synthetic design bounds:
+   an interchange/entropy-mode band of 1 Hz–10 kHz, a drive band of 1
+   MHz–200 GHz and a ~10 s shot-duration bound. An earlier version credited
+   the mode band to D. T. Garnier et al., Phys. Plasmas 13 (2006) 056111,
+   which is not on file. The filed LDX design paper (Garnier et al., Fusion
+   Eng. Des. 81 (2006) 2371) prints related numbers but not these bounds:
+   ECRH at 2.45 and 6.4 GHz, shots typically under 0.3 s with steady-state
+   operation above 10 s as a goal, and mechanical modes of the levitated
+   coil below 10 Hz. The attribution was removed (2026-10-31).
 5. The reference plan mirrors canonical practice with synthetic
    declarations: a flux-loop set and a line-density interferometer (noncyclic against the plasma build-up epoch), an RF drive-phase reference (direct cyclic against the facility clock), an interchange-mode probe array (derived cyclic against the facility clock), and the model-owned synthetic oscillator (simulation clock). Every applicable candidate must be
    planned or explicitly deferred with a reason; every channel is

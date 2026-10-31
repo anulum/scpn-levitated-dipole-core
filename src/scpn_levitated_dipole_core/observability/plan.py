@@ -418,9 +418,9 @@ class DiagnosticPlan:
                         message=(
                             "declared interchange/entropy-mode band "
                             f"{channel.max_signal_frequency_hz:.1f} "
-                            "Hz is outside the dipole Hz-to-kHz "
-                            "instability scale "
-                            "(Garnier et al. 2006)"
+                            "Hz is outside the declared interchange/entropy "
+                            "design band 1 Hz-10 kHz (synthetic; not "
+                            "checked against a source on file)"
                         ),
                     )
                 )
@@ -433,9 +433,9 @@ class DiagnosticPlan:
                         message=(
                             "declared drive frequency "
                             f"{channel.max_signal_frequency_hz:.1f} "
-                            "Hz is outside the ICRF-to-ECRH heating range "
-                            "1 MHz-200 GHz used on dipole experiments "
-                            "(Post 1987)"
+                            "Hz is outside the declared drive design band "
+                            "1 MHz-200 GHz (synthetic; not checked against "
+                            "a source on file)"
                         ),
                     )
                 )
@@ -446,8 +446,8 @@ class DiagnosticPlan:
                         message=(
                             "acquisition window "
                             f"{channel.acquisition_duration_s:.2e} s is "
-                            "longer than the levitated-dipole shot scale of up "
-                            "to ~10 s (Garnier et al. 2006)"
+                            "longer than the declared ~10 s shot-duration bound "
+                            "(synthetic; not checked against a source on file)"
                         ),
                     )
                 )

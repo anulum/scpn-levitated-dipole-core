@@ -90,7 +90,8 @@ def test_report_flags_band_outside_typical_range() -> None:
     )
     findings = plan.consistency_report()
     assert len(findings) == 1
-    assert "Garnier" in findings[0].message
+    assert "declared" in findings[0].message
+    assert "Garnier" not in findings[0].message
 
 
 def test_report_flags_drive_outside_heating_range() -> None:
@@ -129,7 +130,8 @@ def test_report_flags_drive_outside_heating_range() -> None:
     )
     findings = plan.consistency_report()
     assert len(findings) == 1
-    assert "ICRF" in findings[0].message
+    assert "declared drive design band" in findings[0].message
+    assert "Post" not in findings[0].message
 
 
 def test_report_flags_clock_coarser_than_sampling() -> None:
