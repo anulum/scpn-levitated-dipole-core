@@ -87,18 +87,19 @@ PRINTED_WORKED_CASE_CHARGING_CURRENT_A: Final = 300.0
 #: sentence: "corresponding to an F-coil charge of 930 kA T".
 PRINTED_WORKED_CASE_FLOATING_COIL_CHARGE_KA_TURNS: Final = 930.0
 
-# --- The heating, printed p. 2372-2373 and p. 2378 ---
+# --- The heating, printed p. 2372-2373 and p. 2377 ---
 #: The two injected microwave frequencies. The higher is printed
 #: p. 2373 / PDF p. 3 ("the 6.4 GHz heating frequency source"); both are
-#: labelled in Fig. 1 (p. 2372 / PDF p. 2) and named together p. 2378 /
-#: PDF p. 8 ("equal amounts from 2.45 and 6.4 GHz sources").
+#: labelled in Fig. 1 (p. 2372 / PDF p. 2) and named together p. 2377 /
+#: PDF p. 7 ("equal amounts from 2.45 and 6.4 GHz sources").
 PRINTED_HEATING_FREQUENCIES_HZ: Final = (2.45e9, 6.4e9)
 #: Field at which the higher frequency resonates. Printed p. 2373 /
 #: PDF p. 3: "the 6.4 GHz heating frequency source (resonant at
 #: B = 0.23 T)".
 PRINTED_RESONANT_FIELD_T: Final = 0.23
-#: Total injected microwave power. Printed p. 2378 / PDF p. 8: "5 kW of
-#: total ECRH microwave power was applied".
+#: Total injected microwave power. Printed p. 2377 / PDF p. 7: "5 kW of
+#: total ECRH microwave power was applied" (repeated in the Fig. 2 caption,
+#: p. 2378 / PDF p. 8).
 PRINTED_TOTAL_HEATING_POWER_KW: Final = 5.0
 
 # --- The plasma, printed p. 2372 and p. 2378 ---

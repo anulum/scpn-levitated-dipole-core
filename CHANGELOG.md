@@ -39,6 +39,11 @@ SCPN Levitated Dipole Core — CHANGELOG
 
 ### Changed
 
+- The heating anchors cite the page that prints them: the two-frequency
+  sentence and the `5 kW` power are on p. 2377 of the filed design paper,
+  not p. 2378 (where only the Fig. 2 caption repeats the power). No value
+  changes.
+
 - The physical constants name their editions: `MU0` is the pre-2019 SI
   convention (the permeability note now names CODATA 2018 and 2022), and the
   electron mass is the CODATA 2022 value, about `1.4 x 10^-9` above CODATA
