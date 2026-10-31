@@ -237,3 +237,19 @@ def test_the_floor_validator_admits_above_and_refuses_at_or_below() -> None:
         require_above("value", 0.5, 1.0)
     with pytest.raises(DeviceConfigurationError, match=r"strictly positive"):
         require_above("value", -1.0, 1.0)
+
+
+def test_constants_are_the_documented_editions() -> None:
+    """mu0 is the pre-2019 convention, m_e is CODATA 2022, e is exact SI."""
+    from scpn_levitated_dipole_core.physics.constants import (
+        ELECTRON_MASS_KG,
+        ELEMENTARY_CHARGE_C,
+        MU0,
+    )
+
+    assert math.pi * 4.0e-7 == MU0
+    assert 5.0e-10 < (1.25663706212e-6 - MU0) / MU0 < 6.0e-10
+    assert ELECTRON_MASS_KG == 9.1093837139e-31
+    gap = (ELECTRON_MASS_KG - 9.1093837015e-31) / ELECTRON_MASS_KG
+    assert 1.3e-9 < gap < 1.4e-9
+    assert ELEMENTARY_CHARGE_C == 1.602176634e-19

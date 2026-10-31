@@ -11,12 +11,18 @@
 Nothing here describes a device.
 
 **On the permeability.** Two values are in use across this repository
-group: the pre-2019 exact ``4e-7 pi`` and the CODATA measured value
-``1.25663706212e-6``. They differ by about five parts in ten thousand
-million. This module uses the first, matching the closest structural
-sibling in the group, and the choice cannot reach any result here: the
-only printed quantity it touches is a plasma beta the source states to
-two significant figures.
+group: the pre-2019 convention ``4e-7 pi`` and the CODATA 2018 measured
+value ``1.25663706212e-6``. They differ by about five parts in ten thousand
+million (CODATA 2022, ``1.25663706127e-6``, sits about 1.3e-10 below the
+convention). This module uses the convention, matching the closest
+structural sibling in the group, and the choice cannot reach any result
+here: the only printed quantity it touches is a plasma beta the source
+states to two significant figures.
+
+**On the electron mass.** The value is the CODATA 2022 recommendation;
+CODATA 2018 (``9.1093837015e-31``) is about 1.4e-9 relative lower. The
+resonant field ``2 pi m_e f / e`` is linear in it and moves by the same
+relative amount.
 """
 
 from __future__ import annotations
@@ -24,9 +30,9 @@ from __future__ import annotations
 import math
 from typing import Final
 
-#: Vacuum permeability ``4e-7 pi``.
+#: Vacuum permeability ``4e-7 pi``: the pre-2019 SI convention (see above).
 MU0: Final = 4.0e-7 * math.pi
-#: Electron rest mass in kilograms (CODATA).
+#: Electron rest mass in kilograms (CODATA 2022; see above).
 ELECTRON_MASS_KG: Final = 9.1093837139e-31
 #: Elementary charge in coulombs (exact SI 2019 value).
 ELEMENTARY_CHARGE_C: Final = 1.602176634e-19

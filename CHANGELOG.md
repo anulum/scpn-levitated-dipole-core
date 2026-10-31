@@ -39,6 +39,11 @@ SCPN Levitated Dipole Core — CHANGELOG
 
 ### Changed
 
+- The physical constants name their editions: `MU0` is the pre-2019 SI
+  convention (the permeability note now names CODATA 2018 and 2022), and the
+  electron mass is the CODATA 2022 value, about `1.4 x 10^-9` above CODATA
+  2018. No value changes; a test binds each edition and offset.
+
 - `scpn_levitated_dipole_core.observability` is now a package with one
   module per responsibility — vocabulary, catalogue binding, frames, clocks,
   signals and channels, plan composition, record parsing — behind the
