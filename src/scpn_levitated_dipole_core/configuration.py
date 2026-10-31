@@ -11,7 +11,9 @@
 A :class:`DeviceConfiguration` composes a validated floating coil and
 levitation environment under the single registry identifier this
 repository owns. The superconducting-coil requirement is hard (LDX-class
-design; Garnier et al., FED 81 (2006) 2371); a levitation force below
+design; Garnier et al., FED 81 (2006) 2371, PDF p. 1: the dipole, a
+superconducting solenoid, is magnetically levitated to eliminate the
+losses to its supports); a levitation force below
 the coil weight is flagged. Serialisation is canonical (sorted keys, no
 NaN or infinity accepted anywhere) and the SHA-256 digest of those bytes
 identifies the exact parameter set. The registry binding is a data pin

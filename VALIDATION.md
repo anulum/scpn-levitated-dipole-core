@@ -83,7 +83,8 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
   `LevitationEnvironment`, `DeviceConfiguration`) rejecting non-finite
   values, non-positive extents, and a non-superconducting floating coil
   (the hard levitation invariant; LDX-class design, Garnier et al.,
-  Fusion Eng. Des. 81 (2006) 2371) — every rejection branch is tested.
+  Fusion Eng. Des. 81 (2006) 2371, PDF p. 1) — every rejection branch is
+  tested.
 - Derived quantities from standard magnetostatics: the coil magnetic
   moment `m = pi R^2 I` and the axial dipole force `F = m dB/dz`.
 - An advisory consistency finding, reported and never clamped: a

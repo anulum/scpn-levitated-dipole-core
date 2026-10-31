@@ -37,7 +37,8 @@ follow the family pilot.
 3. Hard invariant: the floating coil is superconducting — persistent
    current without leads is what makes levitated-dipole confinement
    possible (LDX-class design; D. T. Garnier et al., Fusion Eng. Des.
-   81 (2006) 2371).
+   81 (2006) 2371, PDF p. 1: the dipole, a superconducting solenoid,
+   is magnetically levitated to eliminate the losses to its supports).
 4. Derived quantities with citations: the coil magnetic moment
    ``m = pi R^2 I`` and the axial force on a dipole in a field
    gradient ``F = m dB/dz`` (standard magnetostatics). Advisory
