@@ -69,8 +69,8 @@ from scpn_levitated_dipole_core.physics.plasma import (  # noqa: E402
 SCHEMA: Final = "scpn-levitated-dipole-core.level0-physics-benchmark.v1"
 NATIVE_STATUS: Final = (
     "unavailable: this package has no native crate; the level-0 kernels are "
-    "closed forms using + - * /, sqrt and one real power, and the native "
-    "decision of audit plan Q01 awaits the owner"
+    "closed forms using + - * /, sqrt and one real power, and the decision "
+    "on a native backend is open with the project owner"
 )
 ANCHOR_CONFIGURATION: Final = (
     b'{"coil":{"coil_current_ka":1.82,"coil_mass_kg":560.0,"coil_radius_m":0.34,'

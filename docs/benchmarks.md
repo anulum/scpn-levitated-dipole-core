@@ -33,19 +33,20 @@ power on both sides, such as the shared library's
 `numerics_transcendental` kernel. The constants and their editions are
 documented in `physics/constants.py` and bound by tests.
 
-**Backend status.** Python floor only. There is no native crate. Audit
-plan Q01 asks for a native path on required numeric paths and allows a
-scoped, owner-approved exception for trivial non-hot arithmetic; that
-decision is the owner's and is recorded as open in the backlog. The
-benchmark marks the native backend as unavailable instead of omitting it.
+**Backend status.** Python floor only. There is no native crate. The
+ecosystem production standard asks for a native path on required numeric
+paths and allows a scoped, owner-approved exception for trivial non-hot
+arithmetic; that decision is the owner's and is recorded as open in the
+backlog. The benchmark marks the native backend as unavailable instead
+of omitting it.
 
 ## Level-0 physics — local workstation (non-isolated)
 
 Artefact: `benchmarks/results/level0_physics.local.json` (schema
-`scpn-levitated-dipole-core.level0-physics-benchmark.v1`, generated 2026-10-31T02:13:11.045404+00:00, at commit
-`d59a36090777` with the working tree of the landing commit).
+`scpn-levitated-dipole-core.level0-physics-benchmark.v1`, generated 2026-10-31T09:58:50.385396+00:00, at commit
+`ca9e725b0c33` with the working tree of the landing commit).
 Host: 11th Gen Intel(R) Core(TM) i5-11600K @ 3.90GHz, Linux-7.0.0-34-generic-x86_64-with-glibc2.39, Python 3.12.3; load average
-at start 5.12 (another test run was active);
+at start 11.02 (another test run was active);
 cores not isolated, so treat the numbers as a smoke timing, not a
 performance measurement. Parameters: 20000 closed-form points and
 2000 records, 3 warm-up passes, 20 timed passes.
@@ -54,14 +55,14 @@ performance measurement. Parameters: 20000 closed-form points and
 
 | Backend | P50 µs/point | P95 µs/point | P99 µs/point | mean µs/point | throughput points/s | status |
 |---|---|---|---|---|---|---|
-| `python_floor` (public API) | 1.181 | 1.737 | 1.766 | 1.251 | 847059 | measured |
+| `python_floor` (public API) | 1.164 | 1.885 | 2.003 | 1.280 | 858778 | measured |
 | `rust_native` | — | — | — | — | — | unavailable: no native crate |
 
 ### `level0_record` (composed record with canonical bytes per point)
 
 | Backend | P50 µs/record | P95 µs/record | P99 µs/record | mean µs/record | throughput records/s | status |
 |---|---|---|---|---|---|---|
-| `python_floor` (public API) | 51.829 | 67.925 | 75.915 | 52.858 | 19294 | measured |
+| `python_floor` (public API) | 64.486 | 95.216 | 110.004 | 67.240 | 15507 | measured |
 | `rust_native` | — | — | — | — | — | unavailable: no native crate |
 
 ## Regenerate

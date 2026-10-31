@@ -30,9 +30,9 @@ SCPN Levitated Dipole Core — CHANGELOG
   record on the Python floor, with a committed local artefact, and
   `docs/benchmarks.md` stating the computation contract of every kernel
   (including the one real power evaluated by the platform `pow`) and the
-  backend status: Python floor only, the native decision of audit plan Q01
-  open with the owner. `benchmarks/` joins the typed cohort and the enrolled
-  surfaces.
+  backend status: Python floor only, the decision on a native backend
+  open with the project owner. `benchmarks/` joins the typed cohort and the
+  enrolled surfaces.
 
 - `tools/check_commit_trailers.py --audit-range REV_RANGE` checks the
   messages of existing commits read-only with the commit-msg rules; exit `2`
