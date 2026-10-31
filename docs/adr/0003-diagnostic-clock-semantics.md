@@ -29,7 +29,8 @@ bind. Four candidates apply to the configuration this repository owns: `open.dri
 ## Decision
 
 1. The capability `diagnostic_clock_semantics` is implemented as a
-   declaration model (`src/scpn_levitated_dipole_core/observability.py`): frozen
+   declaration model (`src/scpn_levitated_dipole_core/observability/`, one module
+   per responsibility behind the package facade): frozen
    `ClockModel`, `DiagnosticChannelPlan`, `DeferredCandidate`, and
    `DiagnosticPlan` objects with fail-closed invariants, an
    advisory-only consistency report, canonical serialisation with
