@@ -25,6 +25,15 @@ SCPN Levitated Dipole Core — CHANGELOG
 
 ### Added
 
+- A level-0 physics benchmark (`benchmarks/level0_physics.py`) per the
+  ecosystem benchmark standard, timing the closed forms and the composed
+  record on the Python floor, with a committed local artefact, and
+  `docs/benchmarks.md` stating the computation contract of every kernel
+  (including the one real power evaluated by the platform `pow`) and the
+  backend status: Python floor only, the native decision of audit plan Q01
+  open with the owner. `benchmarks/` joins the typed cohort and the enrolled
+  surfaces.
+
 - `tools/check_commit_trailers.py --audit-range REV_RANGE` checks the
   messages of existing commits read-only with the commit-msg rules; exit `2`
   when the range cannot be read.
